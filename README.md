@@ -81,12 +81,16 @@ multi-modal-ai-detector/
 
 ---
 
-## 📸 Screenshots
+##  Screenshots
 
-- Home Page  
-- AI Image Detection  
-- AI Model Detection  
+- AI Image Detection
+(static/images/sc1.png)
+
+- AI Model Detection
+(static/images/sc2.png)
+
 - AI Video Detection  
+(static/images/sc3.png)
 
 ---
 
