@@ -83,24 +83,25 @@ multi-modal-ai-detector/
 
 ##  Screenshots
 
-- AI Image Detection
-(static/images/sc1.png)
 
-- AI Model Detection
-(static/images/sc2.png)
+ AI Image Detection  
+![AI Image](static/images/sc1.png)
 
-- AI Video Detection  
-(static/images/sc3.png)
+ AI Model Detection  
+![AI Model](static/images/sc2.png)
+
+ AI Video Detection  
+![AI Video](static/images/sc3.png)
 
 ---
 
-## ⚠️ Note
+##  Note
 
 Due to GitHub file size limitations, large model files such as `model_module2.h5` are not included in the repository. The system is designed to load these models during runtime.
 
 ---
 
-## 🌐 Deployment
+## Deployment
 
 The project can be deployed using platforms like:
 - Render  
@@ -108,7 +109,7 @@ The project can be deployed using platforms like:
 
 ---
 
-## 📌 Future Enhancements
+##  Future Enhancements
 
 - Improve model accuracy with larger datasets  
 - Optimize video processing speed  
@@ -117,13 +118,13 @@ The project can be deployed using platforms like:
 
 ---
 
-## 👩‍💻 Author
+##  Author
 
 **Aseera Parveen J**  
 CNN-Based Multi-Modal AI Detection System  
 
 ---
 
-## 📜 License
+##  License
 
 This project is developed for academic purposes.
