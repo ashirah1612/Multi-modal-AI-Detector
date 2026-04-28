@@ -7,6 +7,8 @@ from PIL import Image
 import time
 import cv2
 import uuid
+import os
+app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
 
 app = Flask(__name__, static_folder='static')
 app.secret_key = 'your_secret_key_here'
