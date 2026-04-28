@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeeplOOker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include 'navbar.html' %}
+<!-- HERO SECTION -->
+<div class="hhero">
+
+    <div class="container hero-center">
+
+        <!-- TEXT -->
+        <div class="hero-text">
+            <p>Introducing</p>
+
+            <h1>
+                Detect AI Content <br> with Confidence
+            </h1>
+
+            <p class="hero-sub">
+                Analyze images, identify AI models, and detect AI-generated videos using advanced deep learning techniques.
+                Ensure authenticity with fast and reliable results.
+            </p>
+        </div>
+
+        <!-- CARDS -->
+        <div class="hero-cards">
+
+            <a href="/" class="hero-card">
+                <img src="https://img.icons8.com/ios-filled/100/4CAF50/image.png" width="60">
+                <h3>AI Image Detector</h3>
+                <p>Detect whether an image is real or AI-generated using deep learning.</p>
+            </a>
+
+            <a href="/model2" class="hero-card">
+                <img src="https://img.icons8.com/ios-filled/100/2196F3/artificial-intelligence.png" width="60">
+                <h3>AI Model Detector</h3>
+                <p>Identify which AI model generated the image such as DALL·E or MidJourney.</p>
+            </a>
+
+            <a href="/vid" class="hero-card">
+                <img src="https://img.icons8.com/ios-filled/100/9C27B0/video.png" width="60">
+                <h3>AI Video Detector</h3>
+                <p>Analyze videos frame-by-frame and detect AI-generated content percentage.</p>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+   <!-- MODULE 1 -->
+<section class="demo">
+    <div class="container">
+        <div class="content">
+            <span class="bluespan">AI Image Detector</span>
+            <h1>Deep Image Analysis</h1>
+            <p>
+                Go beyond basic image inspection and analyze content at a deeper level. It uses a trained CNN model to examine pixel-level patterns and visual inconsistencies. It accurately determines whether an image is real or AI-generated, helping users verify the authenticity of digital visuals with confidence.
+            </p>
+        </div>
+        <div class="visual">
+            <img src="{{ url_for('static', filename='images/demo.png') }}">
+        </div>
+    </div>
+</section>
+
+
+<!-- MODULE 2 -->
+<section class="demo">
+    <div class="container">
+        <div class="content">
+            <span class="bluespan">AI Model Detector</span>
+            <h1>Source Model Identification</h1>
+            <p>
+                It goes beyond detection by identifying the specific AI model used to generate an image. Using advanced feature extraction techniques, it classifies images into models such as DALL·E, MidJourney, Stable Diffusion, and others. This provides deeper insight into the origin of AI-generated content.
+            </p>
+        </div>
+        <div class="visual">
+            <img src="{{ url_for('static', filename='images/demo2.jpeg') }}">
+        </div>
+    </div>
+</section>
+
+
+<!-- MODULE 3 -->
+<section class="demo">
+    <div class="container">
+        <div class="content">
+            <span class="bluespan">AI Video Detector</span>
+            <h1>Frame-Based Video Analysis</h1>
+            <p>
+                To analyzes videos by breaking them into frames and evaluating each frame using the trained image detection model. It calculates the percentage of AI-generated content within the video and provides a final decision based on aggregated results, enabling reliable detection of synthetic media.
+            </p>
+        </div>
+        <div class="visual">
+            <img src="{{ url_for('static', filename='images/demo3.png') }}">
+        </div>
+    </div>
+</section>
+
+
+        <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="bluespan" style="text-align: center;">Unique Features</span>
+                <h2>Why Choose Us ?</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <h3>High Accuracy</h3>
+                    <p>Our advanced neural networks achieve 98% accuracy in detecting AI-generated Content across all major generators.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3>Instant Results</h3>
+                    <p>Get detection results in seconds. Our optimized processing pipeline ensures fast analysis without compromising accuracy.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <polyline points="21 15 16 10 5 21"/>
+                        </svg>
+                    </div>
+                    <h3>Multi-Generator Support</h3>
+                    <p>Detect AI Content from Midjourney, DALL-E 3, Stable Diffusion, GPT-4 Vision, and emerging AI Content generators.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3>Privacy First</h3>
+                    <p>Your Media are processed securely and never stored. Complete privacy protection for all your uploads.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                        </svg>
+                    </div>
+                    <h3>Detection Engine</h3>
+                    <p>Powered by intelligent algorithms, our system analyzes patterns, structures, and contextual signals to detect AI-generated content accurately.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </div>
+                    <h3>Always Updated</h3>
+                    <p>Our models continuously learn and adapt to new AI  generation techniques, staying ahead of emerging generators.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+        <!-- Supported Generators -->
+    <section class="generators">
+        <div class="container">
+            <p class="generators-label">Trusted by users worldwide to detect images from</p>
+            <div class="generators-logos">
+                <div class="generator-logo">
+                    <span class="logo-text">Midjourney</span>
+                </div>
+                <div class="generator-logo">
+                    <span class="logo-text">DALL·E 3</span>
+                </div>
+                <div class="generator-logo">
+                    <span class="logo-text">Stable Diffusion</span>
+                </div>
+                <div class="generator-logo">
+                    <span class="logo-text">GPT-4 Vision</span>
+                </div>
+                <div class="generator-logo">
+                    <span class="logo-text">Adobe Firefly</span>
+                </div>
+                <div class="generator-logo">
+                    <span class="logo-text">Leonardo AI</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+<!-- Howitworks Section -->
+
+    <section class="how" id="howitworks">
+        <div class="container">
+            <div class="section-header">
+                <span class="bluespan" style="text-align: center;">How To Use?</span>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="17 8 12 3 7 8"/>
+                            <line x1="12" y1="3" x2="12" y2="15"/>
+                        </svg>
+                    </div>
+                    <h3>Upload Your Image</h3>
+                    <p>Drag and drop your image. You can also upload one from your device.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3>Instant Analysis</h3>
+                    <p>Our AI image detector uses state-of-the-art deep learning models and advanced computer vision algorithms to analyze your image in real time.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>                    </div>
+                    <h3>Get Your Score</h3>
+                    <p>Receive an accurate probability score indicating whether all or part of the Image is AI-generated or altered.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="faq-section">
+<div class="container faq-wrapper">
+
+    <div class="faq-left">
+        <span class="bluespan" style="background-color:rgb(2, 2, 25);">FAQ</span>
+        <h2>Frequently asked<br>questions</h2>
+    </div>
+
+    <div class="faq-right">
+
+        <!-- 1 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                What Image Format Does Deeplooker’s AI Detector Support?
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>
+                    The system supports standard formats such as JPG, PNG, BMP, and TIFF for accurate image analysis.
+                </p>
+            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                How does the system detect whether an image is AI-generated?
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>
+                    The system uses a trained CNN model to analyze pixel-level patterns and classify images as real or AI-generated.
+                </p>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                Can the system identify which AI model generated an image?
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>
+                    Yes, the model detection module classifies AI-generated images into categories such as DALL·E, MidJourney, Stable Diffusion, and others.
+                </p>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                What happens if a real image is uploaded to the model detection module?
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>
+                    The module is designed for AI-generated images, so results may be less accurate if a real image is provided.
+                </p>
+            </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                Can the system detect AI-generated videos?
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>
+                    Yes, the video detection module analyzes frames extracted from videos to identify AI-generated content.
+                </p>
+            </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                How does video detection work in the system?
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>
+                    The system extracts frames from the video and applies the image detection model to each frame, then calculates the AI percentage.
+                </p>
+            </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                Does the system provide accuracy or confidence scores?
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>
+                    Yes, the system displays prediction results along with confidence values for better interpretation.
+                </p>
+            </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                Is my uploaded data stored in the system?
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>
+                    No, all uploaded images and videos are processed temporarily and are not stored, ensuring user privacy.
+                </p>
+            </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                Can I use this system on mobile devices?
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>
+                    Yes, the system is accessible through a web interface and works on both desktop and mobile browsers.
+                </p>
+            </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                Can this system be used for professional or research purposes?
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>
+                    Yes, the system provides reliable AI detection results suitable for academic, research, and professional use.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+</section>
+
+{% include 'footer.html' %}
+
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<nav class="navbar">
+    <div class="navcont">
+
+        <a href="/home" class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="DeeplOOker">
+        </a>
+
+        <button class="xtra-btn" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="links" id="navLinks">
+
+            <div class="set">
+                <a href="/">AI Detector</a>
+                <a href="/model2">AI Model Detector</a>
+                <a href="/vid">AI Video Detector</a>
+            </div>
+
+            <a href="/home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#howitworks">How it works</a>
+
+            <div class="nav-act">
+                <a href="/about">About Us</a>
+            </div>
+
+        </div>
+
+    </div>
+</nav>
