@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Checker</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .upload-area {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .upload-area:hover {
+            transform: scale(1.03);
+        }
+
+        #pulseLoader {
+            display:none;
+            width:60px;
+            height:60px;
+            margin:20px auto;
+            border-radius:50%;
+            background: radial-gradient(circle, #6366f1 20%, transparent 60%);
+            animation: pulse 1.2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.6; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.8); opacity: 0.6; }
+        }
+    </style>
+</head>
+<body>
+
+{% include 'navbar.html' %}
+
+<section class="hero">
+    <div class="container">
+
+        <div class="hero-content">
+            <h1>Detect AI-Generated Audio with <span class="gradient-text"> 99% Accuracy</span></h1>
+            <p class="hero-subtitle">
+Analyze any audio file to determine whether it’s AI-generated or authentic human speech.            </p>
+        </div>
+
+        <div class="hero-visual">
+            <div class="detection-demo">
+
+                <div class="demo-header">
+                    <div class="demo-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="demo-title">Audio Detection Result</span>
+                </div>
+
+                <div class="demo-content">
+
+                    <form onsubmit="event.preventDefault(); uploadAudio();">
+
+                        <div class="upload-area" onclick="document.getElementById('audioInput').click()">
+
+                            <input 
+                                type="file" 
+                                id="audioInput"
+                                accept="audio/*"
+                                required
+                                style="display:none;"
+                            >
+
+                            <p id="fileName"></p>
+
+                            <p class="upload-text" id="uploadText">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="17 8 12 3 7 8"/>
+                                    <line x1="12" y1="3" x2="12" y2="15"/>
+                                </svg><br>
+                                Drop your Audio here or <span>browse</span>
+                            </p>
+
+                        </div>
+
+                        <br>
+
+                        <button type="submit" class="btn btn-primary btn-lg" id="detectButton" style="display:block; margin:20px auto;">
+                            Analyze Audio
+                        </button>
+
+                        <p id="loadingText" style="text-align:center; display:none;">Analyzing...</p>
+
+                        <div id="pulseLoader"></div>
+
+                        <p id="errorText" style="text-align:center; color:red;"></p>
+
+                    </form>
+
+                    <!-- RESULT -->
+                    <div id="resultBox" class="result-card" style="display:none;">
+
+                        <div style="margin-top:15px; text-align:center;">
+                            <div id="topResult" style="background:#6366f1; padding:12px; border-radius:10px;">
+                                🎧 Result
+                            </div>
+                        </div>
+
+                        <div class="result-verdict">
+                            <div class="verdict-icon ai">🎧</div>
+
+                            <div class="verdict-text">
+                                <span class="verdict-label">Detection Result</span>
+                                <span class="verdict-value" id="verdict"></span>
+                                <span class="verdict-confidence" id="details">Model Confidence</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% include 'footer.html' %}
+
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+
+</body>
+</html>

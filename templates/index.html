@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeeplOOker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Detect AI-Generated Images with <span class="gradient-text">98% Accuracy</span></h1>
+                <p class="hero-subtitle">Advanced AI detection technology to identify images created by Midjourney, DALL-E, Stable Diffusion, and other AI generators.</p>
+            </div>
+
+            <!-- RIGHT SIDE (UPLOAD + RESULT) -->
+            <div class="hero-visual">
+                <div class="detection-demo">
+
+                    <div class="demo-header">
+                        <div class="demo-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="demo-title">AI Detection Result</span>
+                    </div>
+
+                    <div class="demo-content">
+
+                        <!--  FORM -->
+                        <form action="/predict" method="POST" enctype="multipart/form-data">
+
+                            <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+
+                                <input 
+                                    type="file" 
+                                    id="fileInput"
+                                    name="image" 
+                                    accept="image/*" 
+                                    required
+                                    style="display:none;"
+                                >
+                         <img id="previewImage" class="preview-img" style="display:none;"><p id="fileName"></p>
+                                <p class="upload-text" id="uploadText">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                        <polyline points="17 8 12 3 7 8"/>
+                                        <line x1="12" y1="3" x2="12" y2="15"/>
+                                    </svg><br>
+                                    Drop your image here or <span>browse</span>
+                                </p>
+
+                                <p id="fileName" style="margin-top:10px; font-size:14px;"></p>
+
+                            </div>
+
+                            <br>
+
+                        <button type="submit" class="btn btn-primary btn-lg" id="detectButton" style="display:block; margin:20px auto;">
+                                Detect Now 
+                        </button>
+                       
+
+                        </form>
+
+                        <!--  RESULT AFTER SUBMIT -->
+                        {% if result %}
+                        <div class="result-card" style="display:block;">
+                            <img src="{{ url_for('static', filename='uploads/' + image_file) }}" class="preview-img">
+                            <div class="result-meter">
+                                <div style="margin-top:15px; text-align:center;">
+
+                                    {% if result == 'REAL' %}
+                                        <div style="background:#6366f1; padding:12px; border-radius:10px;">
+                                            🧑 Real Image ({{ confidence }}%)
+                                        </div>
+                                    {% else %}
+                                        <div style="background:#6366f1; padding:12px; border-radius:10px;">
+                                            🤖 AI Generated ({{ confidence }}%)
+                                        </div>
+                                    {% endif %}
+
+                                </div>
+                            </div>
+
+                            <div class="result-verdict">
+                                <div class="verdict-icon ai">🤖</div>
+
+                                <div class="verdict-text">
+                                    <span class="verdict-label">Detection Result</span>
+                                    <span class="verdict-value">
+                                        {{ confidence }}% {{ result }}
+                                    </span>
+                                    <span class="verdict-confidence">Model Confidence</span>
+                                </div>
+                            </div>
+                </div>
+                        {% endif %}
+
+                    </div>
+    
+                    </div>
+            </div>
+        </div>
+    </section>
+
+{% include 'footer.html' %}
+
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+
+</body>
+</html>
